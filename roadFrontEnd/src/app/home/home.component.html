@@ -4,6 +4,7 @@
     <h3>Fill out the form below to get help now</h3>
 
     <form class="form-group">
+        
         <div class="form-group">
             <fieldset class="pure-group">
                 <label for="location">Location: </label>
@@ -45,30 +46,34 @@
 
             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit</button>
         </div>
-
-            <agm-map [latitude]='lat' [longitude]='lng'>
-            <agm-marker [latitude]='lat' [longitude]='lng'></agm-marker>
-        </agm-map>
-    
-
-        <div class="modal fade grey" id="myModal" role="dialog">
-            <div class="modal-dialog">
-    
-                <div class="modal-content">
-                    <div class="modal-header">
-    
-                        <h4 class="modal-title">Thank you for your meesage!</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>We appreciate your feedback. </p>
-                    </div>
-                    <div class="modal-footer">
-    
-                        <button type="button z-depth-5" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    </div>
-                </div>
-    
-            </div>
-        </div>
     </form>
 </div>
+<div class="container">
+    <h2>Your Current Location: </h2>
+    <agm-map [latitude]='lat' [longitude]='lng'>
+        <agm-marker [latitude]='lat' [longitude]='lng'></agm-marker>
+    </agm-map>
+</div>
+
+
+
+
+<!-- <div class="modal fade grey" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title">Help is on the way!</h4>
+            </div>
+            <div class="modal-body">
+                <p>Your service request has been posted on the community board. </p>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button z-depth-5" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div> -->
