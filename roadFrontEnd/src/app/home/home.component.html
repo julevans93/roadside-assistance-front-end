@@ -1,0 +1,79 @@
+<div class="container">
+    <h1>Welcome to Zoost</h1>
+    <h2>Get roadside assitance whenever you need it</h2>
+    <h3>Fill out the form below to get help now</h3>
+
+    <form class="form-group">
+        
+        <div class="form-group">
+            <fieldset class="pure-group">
+                <label for="location">Location: </label>
+                <input id="location" placeholder="Please enter your location">
+            </fieldset>
+
+            <div class="form-group">
+                <label for="vehicleColor" >Vehicle Color</label>
+                <select name="vehicleColor" class="form-control">
+                    <option value=""></option>
+                    <option *ngFor="let color of vehicleColor" [value]="color">{{ color }} </option>
+                </select>
+            </div>
+
+            <fieldset class="form-group">
+                <label for="vehicle"><em>Your</em> Vehicle:</label>
+                <input id="vehicle" type="vehicle" value="" placeholder="year, make, model">
+            </fieldset>
+
+            
+
+            <div class="radio">
+                <label for="service" *ngFor="let service of services">
+                    <input  name="service" [value]="service" ngModel type="radio"> {{ service }}
+                </label>
+            </div>
+
+            <fieldset class="form-group">
+                <label for="details">Message: </label>
+                <textarea id="message" cols="30" rows="10" class="form-control"
+                placeholder="Enter any additional details..."></textarea>
+            </fieldset>
+
+            <div class="checkbox">
+                <label for="agreement">
+                    <input name="agreement" ngModel type="checkbox"> I agree to the Terms and Conditions. <br>
+                </label>
+            </div>
+
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Submit</button>
+        </div>
+    </form>
+</div>
+<div class="container">
+    <h2>Your Current Location: </h2>
+    <agm-map [latitude]='lat' [longitude]='lng'>
+        <agm-marker [latitude]='lat' [longitude]='lng'></agm-marker>
+    </agm-map>
+</div>
+
+
+
+
+<!-- <div class="modal fade grey" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h4 class="modal-title">Help is on the way!</h4>
+            </div>
+            <div class="modal-body">
+                <p>Your service request has been posted on the community board. </p>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button z-depth-5" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div> -->
